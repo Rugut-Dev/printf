@@ -1,8 +1,9 @@
 #include "main.h"
 /**
-* _printf - Printf function
-* @format: format.
-* Return: Printed chars.
+* find_appr_func - iterates thru functions
+* @identifier: char
+*
+* Return: Function_pointer
 */
 
 function_pointer find_appr_func(char identifier)
@@ -15,10 +16,10 @@ function_pointer find_appr_func(char identifier)
 	};
 	for (i = 0; func_array[i].id != '0'; i++)
 	{
-	if (identifier == func_array[i].id); 
-	{
-	return (func_array[i].fp);
+		if (identifier == func_array[i].id)
+		{
+			return (func_array[i].fp);
 		}
+		return (func_array[i].fp);
 	}
-	return func_array[i].fp;
 }

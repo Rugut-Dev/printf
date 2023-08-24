@@ -1,33 +1,52 @@
 #include "main.h"
+
+#define UNUSED(x) (void)(x)
 /**
- * print_generic - functions to check
- * @args: arguments
+ * print_generic - handles c
+ * @args: args
  *
  * Return: int
  */
 int print_generic(va_list args)
 {
-	int charCount = 0;
 	char specifier = va_arg(args, int);
 
-	if (specifier == 'c')
+	if (specifier != '\0')
 	{
-		char c = va_arg(args, int);
-
-		_putchar(c);
-		return (1);
+		_putchar(specifier);
 	}
-	else if (specifier == 's')
+	return (1);
+}
+/**
+ * print_s - handles s
+ * @args: args
+ *
+ * Return: int
+ */
+
+int print_s(va_list args)
+{
+	int charCount = 0;
+	char *str = va_arg(args, char *);
+
+	while (*str != '\0')
 	{
-		char *str = va_arg(args, char *);
-
-		while (*str != '\0')
-		{
-			_putchar(*str);
-			str++;
-			charCount++;
-		}
-		return (charCount);
+		_putchar(*str);
+		str++;
+		charCount++;
 	}
-	return (0);
+	return (charCount);
+}
+
+/**
+ * print_percent - handles %
+ * @args: args
+ *
+ * Return: int
+ */
+int print_percent(va_list args)
+{
+	UNUSED(args);
+	_putchar('%');
+	return (1);
 }

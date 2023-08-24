@@ -1,17 +1,16 @@
 #include "main.h"
 /**
  * _printf - custom printf
- * @format: argument
- *@...: va
+ * @format: argument1
  *
- * Return: int
+ * Return: charCount
  */
 int _printf(const char *format, ...)
 {
 	int charCount = 0;
 	int i = 0;
-
 	va_list args;
+	char ch;
 
 	va_start(args, format);
 
@@ -19,9 +18,9 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			char ch = format[i];
-
 			i++;
+			ch = format[i];
+
 			if (ch != '\0')
 			{
 				int (*p_func)(va_list) = find_appr_func(ch);
@@ -37,6 +36,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			charCount++;
+
 		}
 		i++;
 	}

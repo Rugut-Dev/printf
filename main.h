@@ -19,6 +19,8 @@ function_pointer find_appr_func(char identifier);
 int print_generic(va_list args);
 int print_percent(va_list args);
 int print_s(va_list args);
+int print_d(va_list args);
+int print_i(va_list args);
 
 #endif /* MAIN_H */
 

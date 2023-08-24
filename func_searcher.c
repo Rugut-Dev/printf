@@ -12,6 +12,8 @@ function_pointer find_appr_func(char identifier)
 		{'c', print_generic},
 		{'s', print_s},
 		{'%', print_percent},
+		{'d', print_d},
+		{'i', print_i},
 		{'0', NULL}
 	};
 

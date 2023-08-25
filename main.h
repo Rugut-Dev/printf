@@ -8,7 +8,13 @@
 
 typedef int (*function_pointer)(va_list args);
 
-typedef struct func {
+/**
+ * struct func - func_x desc
+ * @id: id
+ * @fp: function pointer
+ */
+typedef struct func
+{
 	char id;
 	function_pointer fp;
 } func_x;
